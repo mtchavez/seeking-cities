@@ -1,8 +1,21 @@
-class ActivitiesTableViewController < UITableViewController
+class PostsTableViewController < UITableViewController
+
+  attr_accessor :location, :tag
+
+  def init_with_location(_location)
+    init
+    self.location = _location
+    self
+  end
+
+  def init_with_tag(_tag)
+    init
+    self.tag = _tag
+    self
+  end
 
   def viewDidLoad
     super
-    @activities = []
     # Uncomment the following line to preserve selection between presentations.
 
     # self.clearsSelectionOnViewWillAppear = false
@@ -11,29 +24,28 @@ class ActivitiesTableViewController < UITableViewController
     # bar for this view controller.
 
     # self.navigationItem.rightBarButtonItem = self.editButtonItem
-    # Dispatch::Queue.concurrent('home-data').async do
-      # BW::HTTP.get('http://seekingcities.com/?json=get_recent_posts') do |response|
-      #   result_data = BW::JSON.parse(response.body.to_str)
-      #   @articles = result_data['posts'].map do |post|
-      #     post.dup
-      #   end
-    # end
-    load_activities
-  end
-
-  def load_activities
-    # Dispatch::Queue.concurrent.async do
-      @activities = []
-      Activity.index do |posts|
-        @activities = posts.dup
-        view.reloadData
-      end
-    #   Dispatch::Queue.main.sync { view.reloadData }
-    # end
+    load_posts_from_location if location
+    load_posts_from_tag if tag
   end
 
   def title
-    'Activities'
+    location.title and return if location
+    tag.title and return if tag
+    'Articles'
+  end
+
+  def load_posts_from_location
+    Post.from_category(location) do |posts|
+      @posts = posts.dup
+      view.reloadData
+    end
+  end
+
+  def load_posts_from_tag
+    Post.from_tag(tag) do |posts|
+      @posts = posts.dup
+      view.reloadData
+    end
   end
 
   def viewDidUnload
@@ -56,20 +68,19 @@ class ActivitiesTableViewController < UITableViewController
 
   def tableView(tableView, numberOfRowsInSection:section)
     # Return the number of rows in the section.
-    @activities ? @activities.size : 0
+    @posts ? @posts.size : 0
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
     cellIdentifier = self.class.name
     cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) || begin
-      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:cellIdentifier)
-      cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton
+      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:cellIdentifier)
       cell
     end
 
-    activity = @activities[indexPath.row]
-    cell.textLabel.text = activity.title
-    cell.detailTextLabel.text = "(#{activity.post_count}) Articles"
+    post = @posts[indexPath.row]
+    cell.textLabel.text = post.title
+    cell.imageView.image = UIImage.imageWithData(NSData.dataWithContentsOfURL(post.thumbnail.to_s.nsurl))
     cell
   end
 
@@ -111,8 +122,9 @@ class ActivitiesTableViewController < UITableViewController
 ## Table view delegate
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    tag = @activities[indexPath.row]
-    posts_controller = PostsTableViewController.alloc.init_with_tag(tag)
-    navigationController.pushViewController(posts_controller, animated:true)
+    # Navigation logic may go here. Create and push another view controller.
+    # detailViewController = DetailViewController.alloc.initWithNibName("Nib name", bundle:nil)
+    # Pass the selected object to the new view controller.
+    # self.navigationController.pushViewController(detailViewController, animated:true)
   end
 end

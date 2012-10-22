@@ -1,4 +1,4 @@
-.data*
+.dat*
 .repl_history
 build
 resources/*.nib

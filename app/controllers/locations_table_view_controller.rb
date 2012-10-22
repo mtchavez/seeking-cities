@@ -63,13 +63,12 @@ class LocationsTableViewController < UITableViewController
     cellIdentifier = self.class.name
     cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) || begin
       cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:cellIdentifier)
-      cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton
       cell
     end
 
     location = @locations[indexPath.row]
-    cell.textLabel.text = location['title']
-    cell.detailTextLabel.text = "(#{location['post_count']}) Articles"
+    cell.textLabel.text = location.title
+    cell.detailTextLabel.text = "(#{location.post_count}) Articles"
     cell
   end
 
@@ -111,9 +110,9 @@ class LocationsTableViewController < UITableViewController
 ## Table view delegate
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    # Navigation logic may go here. Create and push another view controller.
-    # detailViewController = DetailViewController.alloc.initWithNibName("Nib name", bundle:nil)
-    # Pass the selected object to the new view controller.
-    # self.navigationController.pushViewController(detailViewController, animated:true)
+    location = @locations[indexPath.row]
+    posts_controller = PostsTableViewController.alloc.init_with_location(location)
+    navigationController.pushViewController(posts_controller, animated:true)
   end
+
 end
