@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     bubble-wrap (1.1.4)
+    dotenv (0.4.0)
+    motion-testflight (1.4)
+    rake (10.0.3)
     rubymotion_generators (0.0.3)
       thor (~> 0.15)
     sugarcube (0.10)
@@ -12,5 +15,8 @@ PLATFORMS
 
 DEPENDENCIES
   bubble-wrap
+  dotenv
+  motion-testflight
+  rake
   rubymotion_generators
   sugarcube

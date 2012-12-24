@@ -63,7 +63,6 @@ class ActivitiesTableViewController < UITableViewController
     cellIdentifier = self.class.name
     cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) || begin
       cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:cellIdentifier)
-      cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton
       cell
     end
 

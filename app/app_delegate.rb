@@ -1,4 +1,5 @@
 class AppDelegate
+
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     application.statusBarStyle = :black.uistatusbarstyle
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
@@ -51,4 +52,3 @@ class AppDelegate
   end
 =end
 end
-

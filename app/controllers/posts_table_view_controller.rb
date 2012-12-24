@@ -4,18 +4,20 @@ class PostsTableViewController < UITableViewController
 
   def init_with_location(_location)
     init
-    self.location = _location
+    @location = _location
+    title = @location.title
     self
   end
 
   def init_with_tag(_tag)
     init
-    self.tag = _tag
+    @tag = _tag
     self
   end
 
   def viewDidLoad
     super
+    self.title = set_title
     # Uncomment the following line to preserve selection between presentations.
 
     # self.clearsSelectionOnViewWillAppear = false
@@ -24,13 +26,13 @@ class PostsTableViewController < UITableViewController
     # bar for this view controller.
 
     # self.navigationItem.rightBarButtonItem = self.editButtonItem
-    load_posts_from_location if location
-    load_posts_from_tag if tag
+    load_posts_from_location if @location
+    load_posts_from_tag if @tag
   end
 
-  def title
-    location.title and return if location
-    tag.title and return if tag
+  def set_title
+    @location.title and return if @location
+    @tag.title and return if @tag
     'Articles'
   end
 
@@ -122,9 +124,8 @@ class PostsTableViewController < UITableViewController
 ## Table view delegate
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    # Navigation logic may go here. Create and push another view controller.
-    # detailViewController = DetailViewController.alloc.initWithNibName("Nib name", bundle:nil)
-    # Pass the selected object to the new view controller.
-    # self.navigationController.pushViewController(detailViewController, animated:true)
+    post = @posts[indexPath.row]
+    post_controller = PostViewController.alloc.init_with_post(post)
+    navigationController.pushViewController(post_controller, animated: true)
   end
 end
