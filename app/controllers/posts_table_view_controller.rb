@@ -31,9 +31,14 @@ class PostsTableViewController < UITableViewController
   end
 
   def set_title
-    @location.title and return if @location
-    @tag.title and return if @tag
-    'Articles'
+    description = if @location
+      @location.title
+    elsif @tag
+      @tag.title
+    else
+      'Articles'
+    end
+    self.navigationItem.title = description
   end
 
   def load_posts_from_location

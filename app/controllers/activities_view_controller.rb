@@ -27,6 +27,7 @@ class ActivitiesTableViewController < UITableViewController
       @activities = []
       Activity.index do |posts|
         @activities = posts.dup
+        @activities.reject! { |a| a.title.match(/itinerary/i) }
         view.reloadData
       end
     #   Dispatch::Queue.main.sync { view.reloadData }
@@ -61,15 +62,27 @@ class ActivitiesTableViewController < UITableViewController
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
-    cellIdentifier = self.class.name
+    cellIdentifier = 'ListCell'
     cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) || begin
-      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:cellIdentifier)
+      cell = ListViewCell.alloc.initWithStyle UITableViewCellStyleValue1, reuseIdentifier: cellIdentifier
       cell
     end
 
     activity = @activities[indexPath.row]
-    cell.textLabel.text = activity.title
-    cell.detailTextLabel.text = "(#{activity.post_count}) Articles"
+    darkFont = [26, 22, 49].uicolor(1.0)
+
+    cell.nameLabel.text = activity.title
+    cell.nameLabel.font = UIFont.fontWithName 'StMarie-Thin', size: 18.0
+    cell.nameLabel.color = darkFont
+
+    cell.descriptionLabel.text = "#{activity.post_count} Article(s)"
+    cell.descriptionLabel.font = UIFont.fontWithName 'Helvetica-Bold', size: 12.0
+    cell.descriptionLabel.color = darkFont
+
+
+    selectionView = UIView.alloc.init
+    selectionView.backgroundColor = [193, 255, 254].uicolor(1.0)
+    cell.selectedBackgroundView = selectionView
     cell
   end
 

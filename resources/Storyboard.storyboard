@@ -162,19 +162,49 @@
         <scene sceneID="Rxp-yW-Ofk">
             <objects>
                 <tableViewController title="Locations" id="WJx-UA-uns" customClass="LocationsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2H4-E2-fYF">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="2H4-E2-fYF">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LOc-AK-vTM">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" rowHeight="70" id="LOc-AK-vTM" customClass="ListViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="9ah-aR-yjQ">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="267" id="GWW-Lm-Ggc"/>
+                                                <constraint firstAttribute="height" constant="35" id="suv-0m-6aE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqe-sx-GPy">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="113" id="3IO-gl-8po"/>
+                                                <constraint firstAttribute="height" constant="20" id="dBy-QA-Emk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="9ah-aR-yjQ" firstAttribute="leading" secondItem="LOc-AK-vTM" secondAttribute="leading" constant="20" type="default" id="8rz-vX-7DC"/>
+                                    <constraint firstAttribute="bottom" secondItem="zqe-sx-GPy" secondAttribute="bottom" constant="5" id="X9I-vp-9QU"/>
+                                    <constraint firstItem="9ah-aR-yjQ" firstAttribute="top" secondItem="LOc-AK-vTM" secondAttribute="top" constant="5" id="lb3-kC-2bF"/>
+                                    <constraint firstItem="zqe-sx-GPy" firstAttribute="leading" secondItem="LOc-AK-vTM" secondAttribute="leading" constant="20" type="default" id="mIo-yn-9Gv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="zqe-sx-GPy" id="CBI-Wf-agj"/>
+                                    <outlet property="nameLabel" destination="9ah-aR-yjQ" id="BIy-WI-cfe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -192,19 +222,49 @@
         <scene sceneID="dDQ-Y0-X9N">
             <objects>
                 <tableViewController title="Activities" id="f0Z-w1-Pq6" customClass="ActivitiesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g3N-ZC-Tz4">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="g3N-ZC-Tz4">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e11-mB-UPG">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" rowHeight="70" id="Y2I-lS-SJG" customClass="ListViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-kv-LeJ">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="Ldi-ut-u0B"/>
+                                                <constraint firstAttribute="width" constant="267" id="oEb-JF-nT6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-IY-dN7">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="YCZ-z7-QdW"/>
+                                                <constraint firstAttribute="width" constant="113" id="fZN-Fi-elh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="hAE-IY-dN7" firstAttribute="leading" secondItem="Y2I-lS-SJG" secondAttribute="leading" constant="20" type="default" id="2By-6W-Ed3"/>
+                                    <constraint firstItem="hnU-kv-LeJ" firstAttribute="top" secondItem="Y2I-lS-SJG" secondAttribute="top" constant="5" id="Cba-nz-beQ"/>
+                                    <constraint firstItem="hnU-kv-LeJ" firstAttribute="leading" secondItem="Y2I-lS-SJG" secondAttribute="leading" constant="20" type="default" id="cxd-l3-Q64"/>
+                                    <constraint firstAttribute="bottom" secondItem="hAE-IY-dN7" secondAttribute="bottom" constant="5" id="nix-wZ-kek"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="hAE-IY-dN7" id="8sQ-M2-Ra4"/>
+                                    <outlet property="nameLabel" destination="hnU-kv-LeJ" id="ORO-z8-K2S"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -251,6 +311,13 @@
                 <relationship kind="outlet" name="itinerary_label"/>
                 <relationship kind="outlet" name="location_btn"/>
                 <relationship kind="outlet" name="location_label"/>
+            </relationships>
+        </class>
+        <class className="ListViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionLabel"/>
+                <relationship kind="outlet" name="nameLabel"/>
             </relationships>
         </class>
         <class className="LocationsTableViewController" superclassName="UITableViewController">

@@ -61,15 +61,27 @@ class LocationsTableViewController < UITableViewController
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
-    cellIdentifier = self.class.name
+    cellIdentifier = 'ListCell'
     cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) || begin
-      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:cellIdentifier)
+      cell = ListViewCell.alloc.initWithStyle UITableViewCellStyleValue1, reuseIdentifier: cellIdentifier
       cell
     end
 
     location = @locations[indexPath.row]
-    cell.textLabel.text = location.title
-    cell.detailTextLabel.text = "(#{location.post_count}) Articles"
+    darkFont = [26, 22, 49].uicolor(1.0)
+
+    cell.nameLabel.text = location.title
+    cell.nameLabel.font = UIFont.fontWithName 'StMarie-Thin', size: 18.0
+    cell.nameLabel.color = darkFont
+
+    cell.descriptionLabel.text = "#{location.post_count} Article(s)"
+    cell.descriptionLabel.font = UIFont.fontWithName 'Helvetica-Bold', size: 12.0
+    cell.descriptionLabel.color = darkFont
+
+
+    selectionView = UIView.alloc.init
+    selectionView.backgroundColor = [193, 255, 254].uicolor(1.0)
+    cell.selectedBackgroundView = selectionView
     cell
   end
 
