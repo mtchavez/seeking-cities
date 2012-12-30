@@ -18,6 +18,7 @@ Motion::Project::App.setup do |app|
   app.testflight.sdk        = 'vendor/TestFlight'
   app.testflight.api_token  = ENV['TF_API_TOKEN']
   app.testflight.team_token = ENV['TF_TEAM_TOKEN']
+  app.prerendered_icon      = true
   app.icons << 'icon.png'
 
   app.release do
