@@ -1,3 +1,4 @@
+.DS_Store
 .dat*
 .repl_history
 build
@@ -6,3 +7,4 @@ resources/*.momd
 resources/*.storyboardc
 .env
 *.mobileprovision
+ib.xcodeproj

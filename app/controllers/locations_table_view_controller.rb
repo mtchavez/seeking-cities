@@ -2,6 +2,7 @@ class LocationsTableViewController < UITableViewController
 
   def viewDidLoad
     super
+    self.navigationItem.title = self.title
     @locations = []
     # Uncomment the following line to preserve selection between presentations.
 
@@ -113,6 +114,10 @@ class LocationsTableViewController < UITableViewController
     location = @locations[indexPath.row]
     posts_controller = PostsTableViewController.alloc.init_with_location(location)
     navigationController.pushViewController(posts_controller, animated:true)
+  end
+
+  def prepareForSegue sender
+    p 'SEGUE!!'
   end
 
 end

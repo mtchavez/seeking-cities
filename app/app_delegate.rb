@@ -1,12 +1,16 @@
 class AppDelegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    application.statusBarStyle = :black.uistatusbarstyle
+    # Add a 1 second delay
+    # NSThread.sleepForTimeInterval 1.0
+    application.setStatusBarStyle :black.uistatusbarstyle, animated: 'YES'
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    tabbar = UITabBarController.alloc.init
-    home_controller = HomeViewController.alloc.init
+    # tabbar = UITabBarController.alloc.init
+    # home_controller = HomeViewController.alloc.init
     #tabbar.title = NSBundle.mainBundle.infoDictionary["CFBundleName"]
-    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(home_controller)
+    # @window.rootViewController = UINavigationController.alloc.initWithRootViewController(home_controller)
+    storyboard = UIStoryboard.storyboardWithName 'Storyboard', bundle: nil
+    @window.rootViewController = UINavigationController.alloc.initWithRootViewController storyboard.instantiateInitialViewController
     @window.makeKeyAndVisible
     true
   end

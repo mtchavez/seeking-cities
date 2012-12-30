@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dCo-nI-Uhr">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="wU4-jR-dDH">
+            <objects>
+                <viewController id="dCo-nI-Uhr" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ti6-G2-xbu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="map.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gsf-Vv-daC">
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="0FK-Z3-Yp2"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqO-36-nHd">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="2c8-N8-yf3"/>
+                                    <constraint firstAttribute="width" constant="75" id="UoP-P6-YXQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="location@2x.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nav_btn_touched:" destination="dCo-nI-Uhr" eventType="touchUpInside" id="8Zj-zJ-x6P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3M-Qe-C1F">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="tPi-4j-CLv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="activity@2x.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nav_btn_touched:" destination="dCo-nI-Uhr" eventType="touchUpInside" id="a8h-OC-j7P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-3T-Nt1">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="H56-fS-fjF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="itinerary@2x.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nav_btn_touched:" destination="dCo-nI-Uhr" eventType="touchUpInside" id="AYK-UT-TkK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQp-30-SNE">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="6g3-hl-SH8"/>
+                                    <constraint firstAttribute="height" constant="61" id="lXu-dP-coI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="by location">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nav_btn_touched:" destination="dCo-nI-Uhr" eventType="touchUpInside" id="CNH-bH-KlD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3U-AV-LsX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="1n9-I7-6GU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="by activity">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nav_btn_touched:" destination="dCo-nI-Uhr" eventType="touchUpInside" id="fmk-7q-Dx1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7r-2U-bnd">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="Aj1-dc-0rG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="by itinerary">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nav_btn_touched:" destination="dCo-nI-Uhr" eventType="touchUpInside" id="wHg-VW-Z9w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y3U-AV-LsX" firstAttribute="trailing" secondItem="q7r-2U-bnd" secondAttribute="trailing" type="default" id="1Ik-Mn-ogJ"/>
+                            <constraint firstItem="Wav-3T-Nt1" firstAttribute="bottom" secondItem="ti6-G2-xbu" secondAttribute="bottom" type="default" id="DZx-HA-YeD"/>
+                            <constraint firstItem="Y3U-AV-LsX" firstAttribute="leading" secondItem="q7r-2U-bnd" secondAttribute="leading" type="default" id="ERA-n1-dEf"/>
+                            <constraint firstItem="aQp-30-SNE" firstAttribute="trailing" secondItem="Y3U-AV-LsX" secondAttribute="trailing" type="default" id="LVs-1E-iFf"/>
+                            <constraint firstItem="q7r-2U-bnd" firstAttribute="centerY" secondItem="Wav-3T-Nt1" secondAttribute="centerY" type="default" id="MA4-yb-yYR"/>
+                            <constraint firstAttribute="bottom" secondItem="Z3M-Qe-C1F" secondAttribute="bottom" constant="74" id="NBg-Zc-60f"/>
+                            <constraint firstItem="Z3M-Qe-C1F" firstAttribute="leading" secondItem="Wav-3T-Nt1" secondAttribute="leading" type="default" id="P8N-Nf-36H"/>
+                            <constraint firstItem="Z3M-Qe-C1F" firstAttribute="leading" secondItem="JqO-36-nHd" secondAttribute="leading" type="default" id="Siz-83-dhK"/>
+                            <constraint firstItem="JqO-36-nHd" firstAttribute="top" secondItem="ti6-G2-xbu" secondAttribute="top" constant="192" id="TGM-NE-PIT"/>
+                            <constraint firstItem="JqO-36-nHd" firstAttribute="leading" secondItem="ti6-G2-xbu" secondAttribute="leading" constant="10" id="Udc-X0-1MX"/>
+                            <constraint firstItem="aQp-30-SNE" firstAttribute="leading" secondItem="ti6-G2-xbu" secondAttribute="leading" constant="100" id="YJh-tF-s37"/>
+                            <constraint firstItem="Z3M-Qe-C1F" firstAttribute="trailing" secondItem="JqO-36-nHd" secondAttribute="trailing" type="default" id="YOA-nz-6uO"/>
+                            <constraint firstItem="Gsf-Vv-daC" firstAttribute="trailing" secondItem="ti6-G2-xbu" secondAttribute="trailing" type="default" id="fqD-VA-XPR"/>
+                            <constraint firstItem="Gsf-Vv-daC" firstAttribute="top" secondItem="ti6-G2-xbu" secondAttribute="top" constant="-18" id="lMO-mU-gT6"/>
+                            <constraint firstItem="Z3M-Qe-C1F" firstAttribute="trailing" secondItem="Wav-3T-Nt1" secondAttribute="trailing" type="default" id="nQ6-xD-TWB"/>
+                            <constraint firstItem="aQp-30-SNE" firstAttribute="top" secondItem="ti6-G2-xbu" secondAttribute="top" constant="201" id="tCa-l1-Nf5"/>
+                            <constraint firstItem="Gsf-Vv-daC" firstAttribute="leading" secondItem="ti6-G2-xbu" secondAttribute="leading" type="default" id="vNO-Ea-Jsw"/>
+                            <constraint firstItem="aQp-30-SNE" firstAttribute="leading" secondItem="Y3U-AV-LsX" secondAttribute="leading" type="default" id="x3W-aP-HA7"/>
+                            <constraint firstItem="Y3U-AV-LsX" firstAttribute="centerY" secondItem="Z3M-Qe-C1F" secondAttribute="centerY" type="default" id="zgm-3G-yht"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <connections>
+                        <outlet property="activity_btn" destination="Z3M-Qe-C1F" id="hYi-Iz-FNZ"/>
+                        <outlet property="activity_label" destination="Y3U-AV-LsX" id="Hrb-2U-3qt"/>
+                        <outlet property="itinerary_btn" destination="Wav-3T-Nt1" id="iVY-ME-whr"/>
+                        <outlet property="itinerary_label" destination="q7r-2U-bnd" id="2Fs-ud-Ls7"/>
+                        <outlet property="location_btn" destination="JqO-36-nHd" id="soD-mk-xBj"/>
+                        <outlet property="location_label" destination="aQp-30-SNE" id="lfl-Sg-c1x"/>
+                        <segue destination="WJx-UA-uns" kind="push" identifier="LocationsSegue" id="oWc-zT-C7d"/>
+                        <segue destination="f0Z-w1-Pq6" kind="push" identifier="ActivitiesSegue" id="Smo-RK-Qid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ts8-I0-TIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="34"/>
+        </scene>
+        <!--Locations Table View Controller - Locations-->
+        <scene sceneID="Rxp-yW-Ofk">
+            <objects>
+                <tableViewController title="Locations" id="WJx-UA-uns" customClass="LocationsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2H4-E2-fYF">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LOc-AK-vTM">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WJx-UA-uns" id="1XG-K3-Rts"/>
+                            <outlet property="delegate" destination="WJx-UA-uns" id="lye-52-BWQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="zRI-Wv-ig4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rca-3A-tXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="-132"/>
+        </scene>
+        <!--Activities Table View Controller - Activities-->
+        <scene sceneID="dDQ-Y0-X9N">
+            <objects>
+                <tableViewController title="Activities" id="f0Z-w1-Pq6" customClass="ActivitiesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g3N-ZC-Tz4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e11-mB-UPG">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f0Z-w1-Pq6" id="DwO-pR-Qg1"/>
+                            <outlet property="delegate" destination="f0Z-w1-Pq6" id="wDO-Dt-fnf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rZb-M0-yYY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1T-rl-GET" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="545"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="activity@2x.png" width="300" height="300"/>
+        <image name="itinerary@2x.png" width="300" height="300"/>
+        <image name="location@2x.png" width="300" height="300"/>
+        <image name="map.png" width="677" height="436"/>
+    </resources>
+    <classes>
+        <class className="ActivitiesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivitiesTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="load_activities"/>
+                <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="title"/>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="action" name="viewDidUnload"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nav_btn_touched:"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="title"/>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="action" name="viewDidUnload"/>
+                <relationship kind="outlet" name="activity_btn"/>
+                <relationship kind="outlet" name="activity_label"/>
+                <relationship kind="outlet" name="itinerary_btn"/>
+                <relationship kind="outlet" name="itinerary_label"/>
+                <relationship kind="outlet" name="location_btn"/>
+                <relationship kind="outlet" name="location_label"/>
+            </relationships>
+        </class>
+        <class className="LocationsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="load_locations"/>
+                <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="prepareForSegue:"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="title"/>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="action" name="viewDidUnload"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

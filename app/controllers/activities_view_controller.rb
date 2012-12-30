@@ -2,6 +2,7 @@ class ActivitiesTableViewController < UITableViewController
 
   def viewDidLoad
     super
+    self.navigationItem.title = self.title
     @activities = []
     # Uncomment the following line to preserve selection between presentations.
 
