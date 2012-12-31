@@ -152,6 +152,7 @@
                         <outlet property="location_label" destination="aQp-30-SNE" id="lfl-Sg-c1x"/>
                         <segue destination="WJx-UA-uns" kind="push" identifier="LocationsSegue" id="oWc-zT-C7d"/>
                         <segue destination="f0Z-w1-Pq6" kind="push" identifier="ActivitiesSegue" id="Smo-RK-Qid"/>
+                        <segue destination="Hp6-tN-XDE" kind="push" identifier="PostsTableSegue" id="bv7-tx-nWx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ts8-I0-TIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -423,6 +424,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lbp-Di-SBH"/>
+        <segue reference="bv7-tx-nWx"/>
     </inferredMetricsTieBreakers>
 </document>

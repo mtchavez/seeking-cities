@@ -50,13 +50,19 @@ class HomeViewController < UIViewController
     when 2
       'ActivitiesSegue'
     when 3
-      return false
+      'PostsTableSegue'
     else
       return false
     end
     # controller = storyboard.instantiateViewControllerWithIdentifier identifier
     # self.navigationController.pushViewController controller, animated: true
     self.performSegueWithIdentifier segue, sender: self
+  end
+
+  def prepareForSegue segue, sender:sender
+    if segue.identifier.match(/poststablesegue/i)
+      segue.destinationViewController.tag = Activity.new title: 'Itinerary', id: 18, description: '', slug: 'itinerary', post_count: 3
+    end
   end
 
 end
