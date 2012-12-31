@@ -1,0 +1,1145 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant const='true' name='SDWebImageDownloadStartNotification' type='@' declared_type='NSString*'/>
+<constant const='true' name='SDWebImageDownloadStopNotification' type='@' declared_type='NSString*'/>
+<string_constant nsstring='true' name='MWPHOTO_LOADING_DID_END_NOTIFICATION' value='MWPHOTO_LOADING_DID_END_NOTIFICATION'/>
+<enum name='MBProgressHUDAnimationFade' value='0'/>
+<enum name='MBProgressHUDAnimationZoom' value='1'/>
+<enum name='MBProgressHUDModeAnnularDeterminate' value='2'/>
+<enum name='MBProgressHUDModeCustomView' value='3'/>
+<enum name='MBProgressHUDModeDeterminate' value='1'/>
+<enum name='MBProgressHUDModeIndeterminate' value='0'/>
+<enum name='MBProgressHUDModeText' value='4'/>
+<enum name='SDWebImageCacheMemoryOnly' value='4'/>
+<enum name='SDWebImageLowPriority' value='2'/>
+<enum name='SDWebImageProgressiveDownload' value='8'/>
+<enum name='SDWebImageRetryFailed' value='1'/>
+<function name='SDScaledImageForPath' inline='true'>
+<arg name='path' type='@' declared_type='NSString*'/>
+<arg name='imageOrData' type='@' declared_type='NSObject*'/>
+<retval type='@' declared_type='UIImage*'/>
+</function>
+<class name='MBProgressHUD'>
+<method class_method='true' selector='HUDForView:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<retval type='@' declared_type='MBProgressHUD*'/>
+</method>
+<method class_method='true' selector='allHUDsForView:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='animationType'>
+<retval type='i' declared_type='MBProgressHUDAnimation'/>
+</method>
+<method selector='customView'>
+<retval type='@' declared_type='UIView*'/>
+</method>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='detailsLabelFont'>
+<retval type='@' declared_type='UIFont*'/>
+</method>
+<method selector='detailsLabelText'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='dimBackground'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='graceTime'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='hide:'>
+<arg name='animated' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='hide:afterDelay:'>
+<arg name='animated' type='B' index='0' declared_type='BOOL'/>
+<arg name='delay' type='d' index='1' declared_type='NSTimeInterval'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='hideAllHUDsForView:animated:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='animated' type='B' index='1' declared_type='BOOL'/>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method class_method='true' selector='hideHUDForView:animated:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='animated' type='B' index='1' declared_type='BOOL'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='initWithView:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithWindow:'>
+<arg name='window' type='@' index='0' declared_type='UIWindow*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='isSquare'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='labelFont'>
+<retval type='@' declared_type='UIFont*'/>
+</method>
+<method selector='labelText'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='margin'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='minShowTime'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='minSize'>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+<method selector='mode'>
+<retval type='i' declared_type='MBProgressHUDMode'/>
+</method>
+<method selector='opacity'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='progress'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='removeFromSuperViewOnHide'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setAnimationType:'>
+<arg name='animationType' type='i' index='0' declared_type='MBProgressHUDAnimation'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCustomView:'>
+<arg name='customView' type='@' index='0' declared_type='UIView*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' type='@' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDetailsLabelFont:'>
+<arg name='detailsLabelFont' type='@' index='0' declared_type='UIFont*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDetailsLabelText:'>
+<arg name='detailsLabelText' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDimBackground:'>
+<arg name='dimBackground' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGraceTime:'>
+<arg name='graceTime' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLabelFont:'>
+<arg name='labelFont' type='@' index='0' declared_type='UIFont*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLabelText:'>
+<arg name='labelText' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMargin:'>
+<arg name='margin' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMinShowTime:'>
+<arg name='minShowTime' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMinSize:'>
+<arg name='minSize' type='{CGSize=ff}' index='0' declared_type='CGSize'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMode:'>
+<arg name='mode' type='i' index='0' declared_type='MBProgressHUDMode'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOpacity:'>
+<arg name='opacity' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setProgress:'>
+<arg name='progress' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRemoveFromSuperViewOnHide:'>
+<arg name='removeFromSuperViewOnHide' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSquare:'>
+<arg name='square' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTaskInProgress:'>
+<arg name='taskInProgress' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setXOffset:'>
+<arg name='xOffset' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setYOffset:'>
+<arg name='yOffset' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='show:'>
+<arg name='animated' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='showHUDAddedTo:animated:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='animated' type='B' index='1' declared_type='BOOL'/>
+<retval type='@' declared_type='MBProgressHUD*'/>
+</method>
+<method selector='showWhileExecuting:onTarget:withObject:animated:'>
+<arg name='method' type=':' index='0' declared_type='SEL'/>
+<arg name='target' type='@' index='1' declared_type='id'/>
+<arg name='object' type='@' index='2' declared_type='id'/>
+<arg name='animated' type='B' index='3' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='taskInProgress'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='xOffset'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='yOffset'>
+<retval type='f' declared_type='float'/>
+</method>
+</class>
+<class name='MBRoundProgressView'>
+<method selector='isAnnular'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='progress'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='setAnnular:'>
+<arg name='annular' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setProgress:'>
+<arg name='progress' type='f' index='0' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='MWCaptionView'>
+<method selector='initWithPhoto:'>
+<arg name='photo' type='@' index='0' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='setupCaption'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sizeThatFits:'>
+<arg name='size' type='{CGSize=ff}' index='0' declared_type='CGSize'/>
+<retval type='{CGSize=ff}' declared_type='CGSize'/>
+</method>
+</class>
+<class name='MWPhoto'>
+<method selector='caption'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='initWithFilePath:'>
+<arg name='path' type='@' index='0' declared_type='NSString*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithImage:'>
+<arg name='image' type='@' index='0' declared_type='UIImage*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithURL:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='photoWithFilePath:'>
+<arg name='path' type='@' index='0' declared_type='NSString*'/>
+<retval type='@' declared_type='MWPhoto*'/>
+</method>
+<method class_method='true' selector='photoWithImage:'>
+<arg name='image' type='@' index='0' declared_type='UIImage*'/>
+<retval type='@' declared_type='MWPhoto*'/>
+</method>
+<method class_method='true' selector='photoWithURL:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<retval type='@' declared_type='MWPhoto*'/>
+</method>
+<method selector='setCaption:'>
+<arg name='caption' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='MWPhotoBrowser'>
+<method selector='displayActionButton'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='initWithDelegate:'>
+<arg name='delegate' type='@' index='0' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithPhotos:'>
+<arg name='photosArray' type='@' index='0' declared_type='NSArray*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='reloadData'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDisplayActionButton:'>
+<arg name='displayActionButton' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInitialPageIndex:'>
+<arg name='index' type='I' index='0' declared_type='NSUInteger'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='MWTapDetectingImageView'>
+<method selector='handleDoubleTap:'>
+<arg name='touch' type='@' index='0' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='handleSingleTap:'>
+<arg name='touch' type='@' index='0' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='handleTripleTap:'>
+<arg name='touch' type='@' index='0' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTapDelegate:'>
+<arg name='tapDelegate' type='@' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='tapDelegate'>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='MWTapDetectingView'>
+<method selector='handleDoubleTap:'>
+<arg name='touch' type='@' index='0' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='handleSingleTap:'>
+<arg name='touch' type='@' index='0' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='handleTripleTap:'>
+<arg name='touch' type='@' index='0' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTapDelegate:'>
+<arg name='tapDelegate' type='@' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='tapDelegate'>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='MWZoomingScrollView'>
+<method selector='captionView'>
+<retval type='@' declared_type='MWCaptionView*'/>
+</method>
+<method selector='displayImage'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='displayImageFailure'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='initWithPhotoBrowser:'>
+<arg name='browser' type='@' index='0' declared_type='MWPhotoBrowser*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='photo'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='prepareForReuse'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCaptionView:'>
+<arg name='captionView' type='@' index='0' declared_type='MWCaptionView*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMaxMinZoomScalesForCurrentBounds'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPhoto:'>
+<arg name='photo' type='@' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='caption'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='hudWasHidden:'>
+<arg name='hud' type='@' index='0' declared_type='MBProgressHUD*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageCache:didFindImage:forKey:userInfo:'>
+<arg name='imageCache' type='@' index='0' declared_type='SDImageCache*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='key' type='@' index='2' declared_type='NSString*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageCache:didNotFindImageForKey:userInfo:'>
+<arg name='imageCache' type='@' index='0' declared_type='SDImageCache*'/>
+<arg name='key' type='@' index='1' declared_type='NSString*'/>
+<arg name='info' type='@' index='2' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageDecoder:didFinishDecodingImage:userInfo:'>
+<arg name='decoder' type='@' index='0' declared_type='SDWebImageDecoder*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='userInfo' type='@' index='2' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageDownloader:didFailWithError:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageDownloader:didFinishWithImage:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageDownloader:didUpdatePartialImage:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageDownloaderDidFinish:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageView:doubleTapDetected:'>
+<arg name='imageView' type='@' index='0' declared_type='UIImageView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageView:singleTapDetected:'>
+<arg name='imageView' type='@' index='0' declared_type='UIImageView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageView:tripleTapDetected:'>
+<arg name='imageView' type='@' index='0' declared_type='UIImageView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='loadUnderlyingImageAndNotify'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='numberOfPhotosInPhotoBrowser:'>
+<arg name='photoBrowser' type='@' index='0' declared_type='MWPhotoBrowser*'/>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method selector='photoBrowser:captionViewForPhotoAtIndex:'>
+<arg name='photoBrowser' type='@' index='0' declared_type='MWPhotoBrowser*'/>
+<arg name='index' type='I' index='1' declared_type='NSUInteger'/>
+<retval type='@' declared_type='MWCaptionView*'/>
+</method>
+<method selector='photoBrowser:photoAtIndex:'>
+<arg name='photoBrowser' type='@' index='0' declared_type='MWPhotoBrowser*'/>
+<arg name='index' type='I' index='1' declared_type='NSUInteger'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='underlyingImage'>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='unloadUnderlyingImage'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='view:doubleTapDetected:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='view:singleTapDetected:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='view:tripleTapDetected:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didFailWithError:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didFailWithError:forURL:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didFailWithError:forURL:userInfo:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didFinishWithImage:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didFinishWithImage:forURL:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didFinishWithImage:forURL:userInfo:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didProgressWithPartialImage:forURL:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='webImageManager:didProgressWithPartialImage:forURL:userInfo:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='SDImageCache'>
+<method selector='cleanDisk'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='clearDisk'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='clearMemory'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='getDiskCount'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='getMemoryCount'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='getMemorySize'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='getSize'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='imageFromKey:'>
+<arg name='key' type='@' index='0' declared_type='NSString*'/>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='imageFromKey:fromDisk:'>
+<arg name='key' type='@' index='0' declared_type='NSString*'/>
+<arg name='fromDisk' type='B' index='1' declared_type='BOOL'/>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='queryDiskCacheForKey:delegate:userInfo:'>
+<arg name='key' type='@' index='0' declared_type='NSString*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='info' type='@' index='2' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeImageForKey:'>
+<arg name='key' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeImageForKey:fromDisk:'>
+<arg name='key' type='@' index='0' declared_type='NSString*'/>
+<arg name='fromDisk' type='B' index='1' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='setMaxCacheAge:'>
+<arg name='maxCacheAge' type='i' index='0' declared_type='NSInteger'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='sharedImageCache'>
+<retval type='@' declared_type='SDImageCache*'/>
+</method>
+<method selector='storeImage:forKey:'>
+<arg name='image' type='@' index='0' declared_type='UIImage*'/>
+<arg name='key' type='@' index='1' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='storeImage:forKey:toDisk:'>
+<arg name='image' type='@' index='0' declared_type='UIImage*'/>
+<arg name='key' type='@' index='1' declared_type='NSString*'/>
+<arg name='toDisk' type='B' index='2' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='storeImage:imageData:forKey:toDisk:'>
+<arg name='image' type='@' index='0' declared_type='UIImage*'/>
+<arg name='data' type='@' index='1' declared_type='NSData*'/>
+<arg name='key' type='@' index='2' declared_type='NSString*'/>
+<arg name='toDisk' type='B' index='3' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='SDWebImageDecoder'>
+<method selector='decodeImage:withDelegate:userInfo:'>
+<arg name='image' type='@' index='0' declared_type='UIImage*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='info' type='@' index='2' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='sharedImageDecoder'>
+<retval type='@' declared_type='SDWebImageDecoder*'/>
+</method>
+</class>
+<class name='SDWebImageDownloader'>
+<method selector='cancel'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='downloaderWithURL:delegate:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='downloaderWithURL:delegate:userInfo:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='userInfo' type='@' index='2' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='downloaderWithURL:delegate:userInfo:lowPriority:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='userInfo' type='@' index='2' declared_type='id'/>
+<arg name='lowPriority' type='B' index='3' declared_type='BOOL'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='imageData'>
+<retval type='@' declared_type='NSMutableData*'/>
+</method>
+<method selector='lowPriority'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='progressive'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' type='@' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageData:'>
+<arg name='imageData' type='@' index='0' declared_type='NSMutableData*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLowPriority:'>
+<arg name='lowPriority' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='setMaxConcurrentDownloads:'>
+<arg name='max' type='I' index='0' declared_type='NSUInteger'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setProgressive:'>
+<arg name='progressive' type='B' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUrl:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUserInfo:'>
+<arg name='userInfo' type='@' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='start'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='url'>
+<retval type='@' declared_type='NSURL*'/>
+</method>
+<method selector='userInfo'>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='SDWebImageManager'>
+<method selector='cacheKeyFilter'>
+<retval type='@?' function_pointer='true' declared_type='CacheKeyFilter'>
+<arg type='@' declared_type='NSURL*'/>
+<retval type='@' declared_type='NSString*'/>
+</retval>
+</method>
+<method selector='cancelForDelegate:'>
+<arg name='delegate' type='@' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='downloadWithURL:delegate:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='downloadWithURL:delegate:options:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='downloadWithURL:delegate:options:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<arg name='success' type='@?' index='3' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='4' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='downloadWithURL:delegate:options:userInfo:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='downloadWithURL:delegate:options:userInfo:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<arg name='success' type='@?' index='4' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='5' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='downloadWithURL:delegate:retryFailed:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='retryFailed' type='B' index='2' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='downloadWithURL:delegate:retryFailed:lowPriority:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='delegate' type='@' index='1' declared_type='id'/>
+<arg name='retryFailed' type='B' index='2' declared_type='BOOL'/>
+<arg name='lowPriority' type='B' index='3' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='imageWithURL:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method selector='setCacheKeyFilter:'>
+<arg name='cacheKeyFilter' type='@?' index='0' function_pointer='true' declared_type='CacheKeyFilter'>
+<arg type='@' declared_type='NSURL*'/>
+<retval type='@' declared_type='NSString*'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='sharedManager'>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='SDWebImagePrefetcher'>
+<method selector='cancelPrefetching'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='maxConcurrentDownloads'>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method selector='options'>
+<retval type='i' declared_type='SDWebImageOptions'/>
+</method>
+<method selector='prefetchURLs:'>
+<arg name='urls' type='@' index='0' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMaxConcurrentDownloads:'>
+<arg name='maxConcurrentDownloads' type='I' index='0' declared_type='NSUInteger'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOptions:'>
+<arg name='options' type='i' index='0' declared_type='SDWebImageOptions'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='sharedImagePrefetcher'>
+<retval type='@' declared_type='SDWebImagePrefetcher*'/>
+</method>
+</class>
+<class name='UIButton'>
+<method selector='cancelCurrentImageLoad'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBackgroundImageWithURL:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBackgroundImageWithURL:placeholderImage:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBackgroundImageWithURL:placeholderImage:options:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBackgroundImageWithURL:placeholderImage:options:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<arg name='success' type='@?' index='3' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='4' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBackgroundImageWithURL:placeholderImage:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='success' type='@?' index='2' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='3' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBackgroundImageWithURL:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='success' type='@?' index='1' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='2' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:options:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:options:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<arg name='success' type='@?' index='3' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='4' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='success' type='@?' index='2' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='3' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='success' type='@?' index='1' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='2' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='UIImage'>
+<method class_method='true' selector='decodedImageWithImage:'>
+<arg name='image' type='@' index='0' declared_type='UIImage*'/>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+</class>
+<class name='UIImageView'>
+<method selector='cancelCurrentImageLoad'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:options:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:options:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='options' type='i' index='2' declared_type='SDWebImageOptions'/>
+<arg name='success' type='@?' index='3' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='4' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='placeholder' type='@' index='1' declared_type='UIImage*'/>
+<arg name='success' type='@?' index='2' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='3' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setImageWithURL:success:failure:'>
+<arg name='url' type='@' index='0' declared_type='NSURL*'/>
+<arg name='success' type='@?' index='1' function_pointer='true' declared_type='SDWebImageSuccessBlock'>
+<arg type='@' declared_type='UIImage*'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<arg name='failure' type='@?' index='2' function_pointer='true' declared_type='SDWebImageFailureBlock'>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<informal_protocol name='MBProgressHUDDelegate'>
+<method type='v12@0:4@8' selector='hudWasHidden:'>
+<arg name='hud' type='@' index='0' declared_type='MBProgressHUD*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='MWPhoto'>
+<method type='@8@0:4' selector='caption'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method type='v8@0:4' selector='loadUnderlyingImageAndNotify'>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='@8@0:4' selector='underlyingImage'>
+<retval type='@' declared_type='UIImage*'/>
+</method>
+<method type='v8@0:4' selector='unloadUnderlyingImage'>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='MWPhotoBrowserDelegate'>
+<method type='I12@0:4@8' selector='numberOfPhotosInPhotoBrowser:'>
+<arg name='photoBrowser' type='@' index='0' declared_type='MWPhotoBrowser*'/>
+<retval type='I' declared_type='NSUInteger'/>
+</method>
+<method type='@16@0:4@8I12' selector='photoBrowser:captionViewForPhotoAtIndex:'>
+<arg name='photoBrowser' type='@' index='0' declared_type='MWPhotoBrowser*'/>
+<arg name='index' type='I' index='1' declared_type='NSUInteger'/>
+<retval type='@' declared_type='MWCaptionView*'/>
+</method>
+<method type='@16@0:4@8I12' selector='photoBrowser:photoAtIndex:'>
+<arg name='photoBrowser' type='@' index='0' declared_type='MWPhotoBrowser*'/>
+<arg name='index' type='I' index='1' declared_type='NSUInteger'/>
+<retval type='@' declared_type='id'/>
+</method>
+</informal_protocol>
+<informal_protocol name='MWTapDetectingImageViewDelegate'>
+<method type='v16@0:4@8@12' selector='imageView:doubleTapDetected:'>
+<arg name='imageView' type='@' index='0' declared_type='UIImageView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@12' selector='imageView:singleTapDetected:'>
+<arg name='imageView' type='@' index='0' declared_type='UIImageView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@12' selector='imageView:tripleTapDetected:'>
+<arg name='imageView' type='@' index='0' declared_type='UIImageView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='MWTapDetectingViewDelegate'>
+<method type='v16@0:4@8@12' selector='view:doubleTapDetected:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@12' selector='view:singleTapDetected:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@12' selector='view:tripleTapDetected:'>
+<arg name='view' type='@' index='0' declared_type='UIView*'/>
+<arg name='touch' type='@' index='1' declared_type='UITouch*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SDImageCacheDelegate'>
+<method type='v24@0:4@8@12@16@20' selector='imageCache:didFindImage:forKey:userInfo:'>
+<arg name='imageCache' type='@' index='0' declared_type='SDImageCache*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='key' type='@' index='2' declared_type='NSString*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v20@0:4@8@12@16' selector='imageCache:didNotFindImageForKey:userInfo:'>
+<arg name='imageCache' type='@' index='0' declared_type='SDImageCache*'/>
+<arg name='key' type='@' index='1' declared_type='NSString*'/>
+<arg name='info' type='@' index='2' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SDWebImageDecoderDelegate'>
+<method type='v20@0:4@8@12@16' selector='imageDecoder:didFinishDecodingImage:userInfo:'>
+<arg name='decoder' type='@' index='0' declared_type='SDWebImageDecoder*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='userInfo' type='@' index='2' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SDWebImageDownloaderDelegate'>
+<method type='v16@0:4@8@12' selector='imageDownloader:didFailWithError:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@12' selector='imageDownloader:didFinishWithImage:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@12' selector='imageDownloader:didUpdatePartialImage:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4@8' selector='imageDownloaderDidFinish:'>
+<arg name='downloader' type='@' index='0' declared_type='SDWebImageDownloader*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SDWebImageManagerDelegate'>
+<method type='v16@0:4@8@12' selector='webImageManager:didFailWithError:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v20@0:4@8@12@16' selector='webImageManager:didFailWithError:forURL:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v24@0:4@8@12@16@20' selector='webImageManager:didFailWithError:forURL:userInfo:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='error' type='@' index='1' declared_type='NSError*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@12' selector='webImageManager:didFinishWithImage:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v20@0:4@8@12@16' selector='webImageManager:didFinishWithImage:forURL:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v24@0:4@8@12@16@20' selector='webImageManager:didFinishWithImage:forURL:userInfo:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v20@0:4@8@12@16' selector='webImageManager:didProgressWithPartialImage:forURL:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v24@0:4@8@12@16@20' selector='webImageManager:didProgressWithPartialImage:forURL:userInfo:'>
+<arg name='imageManager' type='@' index='0' declared_type='SDWebImageManager*'/>
+<arg name='image' type='@' index='1' declared_type='UIImage*'/>
+<arg name='url' type='@' index='2' declared_type='NSURL*'/>
+<arg name='info' type='@' index='3' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+</signatures>

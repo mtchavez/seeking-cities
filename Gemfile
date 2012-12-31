@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rake'
+gem 'rake', '~>0.9.6'
 gem 'rubymotion_generators'
 gem 'bubble-wrap'
 gem 'sugarcube'
 gem 'motion-testflight'
 gem 'dotenv'
 gem 'ib'
+gem 'cocoapods'
+gem 'motion-cocoapods'

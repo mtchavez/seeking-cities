@@ -3,6 +3,7 @@ $:.unshift('/Library/RubyMotion/lib')
 require 'motion/project'
 require 'bundler'
 require 'motion-testflight'
+require 'motion-cocoapods'
 require 'dotenv'
 require 'dotenv/tasks'
 Dotenv.load
@@ -29,6 +30,11 @@ Motion::Project::App.setup do |app|
     app.seed_id = ENV['SEED_ID']
     app.provisioning_profile = ENV['PROD_PROV_PROF']
   end
+
+  app.pods do
+    pod 'MWPhotoBrowser'
+  end
+
 end
 
 desc 'compiles interfaces/*.xib to resources/*.nib'
