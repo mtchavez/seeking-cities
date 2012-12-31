@@ -11,21 +11,23 @@ class HomeViewController < UIViewController
 
   def viewDidLoad
     super
-    navColor = [29, 36, 52].uicolor(1.0)
-    darkFont = [26, 22, 49].uicolor(1.0)
+    # navColor = [29, 36, 52].uicolor(1.0)
+    # darkFont = [26, 22, 49].uicolor(1.0)
+    navColor = BubbleWrap.rgb_color(29, 36, 52)
+    darkFont = BubbleWrap.rgb_color(26, 22, 49)
     stMarie  = UIFont.fontWithName 'StMarie-Thin', size: 32.0
     navigationController.navigationBar.tintColor = navColor
 
-    location_label.setTitleColor darkFont, forState: :normal.uicontrolstate
-    location_label.setTitleColor darkFont, forState: :highlighted.uicontrolstate
+    location_label.setTitleColor darkFont, forState: UIControlStateNormal #:normal.uicontrolstate
+    location_label.setTitleColor darkFont, forState: UIControlStateHighlighted #:highlighted.uicontrolstate
     location_label.titleLabel.font = stMarie
 
-    activity_label.setTitleColor darkFont, forState: :normal.uicontrolstate
-    activity_label.setTitleColor darkFont, forState: :highlighted.uicontrolstate
+    activity_label.setTitleColor darkFont, forState: UIControlStateNormal #:normal.uicontrolstate
+    activity_label.setTitleColor darkFont, forState: UIControlStateHighlighted #:highlighted.uicontrolstate
     activity_label.titleLabel.font = stMarie
 
-    itinerary_label.setTitleColor darkFont, forState: :normal.uicontrolstate
-    itinerary_label.setTitleColor darkFont, forState: :highlighted.uicontrolstate
+    itinerary_label.setTitleColor darkFont, forState: UIControlStateNormal #:normal.uicontrolstate
+    itinerary_label.setTitleColor darkFont, forState: UIControlStateHighlighted #:highlighted.uicontrolstate
     itinerary_label.titleLabel.font = stMarie
   end
 

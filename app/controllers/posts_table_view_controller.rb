@@ -89,12 +89,13 @@ class PostsTableViewController < UITableViewController
 
     cell.titleLabel.text = post.title
     cell.titleLabel.font = UIFont.fontWithName 'StMarie-Thin', size: 18.0
-    cell.titleLabel.color = [26, 22, 49].uicolor(1.0)
+    cell.titleLabel.color = BubbleWrap.rgb_color(26, 22, 49)#[26, 22, 49].uicolor(1.0)
 
-    cell.previewImage.image = UIImage.imageWithData(NSData.dataWithContentsOfURL(post.thumbnail.to_s.nsurl))
+    # cell.previewImage.image = UIImage.imageWithData(NSData.dataWithContentsOfURL(post.thumbnail.to_s.nsurl))
+    cell.previewImage.image = UIImage.imageWithData(NSData.dataWithContentsOfURL(NSURL.alloc.initWithString(post.thumbnail.to_s)))
 
     selectionView = UIView.alloc.init
-    selectionView.backgroundColor = [193, 255, 254].uicolor(1.0)
+    selectionView.backgroundColor = BubbleWrap.rgb_color(193, 255, 254) #[193, 255, 254].uicolor(1.0)
     cell.selectedBackgroundView = selectionView
     cell
   end

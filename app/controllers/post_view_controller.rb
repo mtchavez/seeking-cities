@@ -1,7 +1,7 @@
 class PostViewController < UIViewController
 
   extend IB
-  include SugarCube::CoreGraphics
+  # include SugarCube::CoreGraphics
 
   attr_accessor :post, :photos
 

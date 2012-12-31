@@ -69,7 +69,8 @@ class ActivitiesTableViewController < UITableViewController
     end
 
     activity = @activities[indexPath.row]
-    darkFont = [26, 22, 49].uicolor(1.0)
+    # darkFont = [26, 22, 49].uicolor(1.0)
+    darkFont = BubbleWrap.rgb_color(26, 22, 49)
 
     cell.nameLabel.text = activity.title
     cell.nameLabel.font = UIFont.fontWithName 'StMarie-Thin', size: 18.0
@@ -81,7 +82,7 @@ class ActivitiesTableViewController < UITableViewController
 
 
     selectionView = UIView.alloc.init
-    selectionView.backgroundColor = [193, 255, 254].uicolor(1.0)
+    selectionView.backgroundColor = BubbleWrap.rgb_color(193, 255, 254) #[193, 255, 254].uicolor(1.0)
     cell.selectedBackgroundView = selectionView
     cell
   end

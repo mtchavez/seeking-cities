@@ -1,7 +1,7 @@
 class AppDelegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    application.setStatusBarStyle :black.uistatusbarstyle, animated: 'YES'
+    application.setStatusBarStyle UIStatusBarStyleBlackOpaque, animated: 'YES'
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     storyboard = if is_iphone5?
       UIStoryboard.storyboardWithName 'Storyboard5', bundle: nil
