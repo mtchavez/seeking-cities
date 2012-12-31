@@ -220,7 +220,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rca-3A-tXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="-132"/>
+            <point key="canvasLocation" x="567" y="-229"/>
         </scene>
         <!--Posts Table View Controller-->
         <scene sceneID="4rr-rk-etd">
@@ -274,10 +274,60 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0d5-Y1-h2A"/>
+                    <connections>
+                        <segue destination="Am6-IO-Ffi" kind="push" identifier="PostViewSegue" id="Buo-UR-RPR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZK-RF-YOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="217"/>
+            <point key="canvasLocation" x="981" y="34"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="WZB-R4-YNz">
+            <objects>
+                <viewController id="Am6-IO-Ffi" customClass="PostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sO9-7G-Lhj">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifm-PQ-4FU">
+                                <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="324" id="eVL-3Q-jaT"/>
+                                </constraints>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES" calendarEvent="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Am6-IO-Ffi" id="aJk-XF-PtV"/>
+                                </connections>
+                            </webView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-9q-10p">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Bwf-5L-GbY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1rM-9q-10p" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0bt-Zi-eZh"/>
+                            <constraint firstItem="ifm-PQ-4FU" firstAttribute="top" secondItem="sO9-7G-Lhj" secondAttribute="top" constant="82" id="11K-oX-dpK"/>
+                            <constraint firstItem="ifm-PQ-4FU" firstAttribute="leading" secondItem="sO9-7G-Lhj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2sE-IA-hlB"/>
+                            <constraint firstAttribute="trailing" secondItem="ifm-PQ-4FU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3VW-0q-dah"/>
+                            <constraint firstItem="1rM-9q-10p" firstAttribute="leading" secondItem="sO9-7G-Lhj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aZ9-lj-NoP"/>
+                            <constraint firstItem="1rM-9q-10p" firstAttribute="top" secondItem="sO9-7G-Lhj" secondAttribute="top" constant="7" id="fEE-tK-IfJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CVC-1N-40U"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="1rM-9q-10p" id="F6a-U5-6hX"/>
+                        <outlet property="webView" destination="ifm-PQ-4FU" id="rIu-TE-KMG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQV-dp-R2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="34"/>
         </scene>
         <!--Activities Table View Controller - Activities-->
         <scene sceneID="dDQ-Y0-X9N">
@@ -340,7 +390,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1T-rl-GET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="545"/>
+            <point key="canvasLocation" x="567" y="348"/>
         </scene>
     </scenes>
     <resources>
@@ -405,6 +455,19 @@
                 <relationship kind="outlet" name="titleLabel"/>
             </relationships>
         </class>
+        <class className="PostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loadView"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="title"/>
+                <relationship kind="action" name="update_view"/>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="action" name="viewDidUnload"/>
+                <relationship kind="outlet" name="titleLabel"/>
+                <relationship kind="outlet" name="webView"/>
+            </relationships>
+        </class>
         <class className="PostsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostsTableViewController.h"/>
             <relationships>
@@ -424,6 +487,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bv7-tx-nWx"/>
+        <segue reference="ygb-Vr-MUD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -53,8 +53,6 @@ class HomeViewController < UIViewController
     else
       return false
     end
-    # controller = storyboard.instantiateViewControllerWithIdentifier identifier
-    # self.navigationController.pushViewController controller, animated: true
     self.performSegueWithIdentifier segue, sender: self
   end
 

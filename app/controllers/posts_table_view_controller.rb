@@ -138,8 +138,11 @@ class PostsTableViewController < UITableViewController
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     post = @posts[indexPath.row]
-    post_controller = PostViewController.alloc.init_with_post(post)
-    navigationController.pushViewController(post_controller, animated: true)
+    self.performSegueWithIdentifier 'PostViewSegue', sender: post
+  end
+
+  def prepareForSegue segue, sender:sender
+    segue.destinationViewController.post = sender
   end
 
 end
