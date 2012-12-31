@@ -14,8 +14,6 @@ Motion::Project::App.setup do |app|
   app.name                   = 'SeekingCities'
   app.interface_orientations = [:portrait]
   app.identifier             = ENV['APP_ID']
-  app.codesign_certificate   = ENV['CODE_CERT']
-  app.provisioning_profile   = ENV['DEV_PROV_PROF']
   app.fonts                  = ['StMarie-Thin.otf', 'KGPayphone.ttf']
   app.testflight.sdk         = 'vendor/TestFlight'
   app.testflight.api_token   = ENV['TF_API_TOKEN']
@@ -25,10 +23,16 @@ Motion::Project::App.setup do |app|
 
   # app.info_plist['UIStatusBarHidden'] = true
 
+  app.development do
+    app.codesign_certificate = ENV['CODE_CERT']
+    app.provisioning_profile = ENV['DEV_PROV_PROF']
+  end
+
   app.release do
-    app.deployment_target = '5.0'
-    app.seed_id = ENV['SEED_ID']
-    app.provisioning_profile = ENV['PROD_PROV_PROF']
+    app.deployment_target    = '5.0'
+    app.seed_id              = ENV['SEED_ID']
+    app.codesign_certificate = ENV['RELEASE_CODE_CERT']
+    app.provisioning_profile = ENV['RELEASE_PROV_PROF']
   end
 
   app.pods do
