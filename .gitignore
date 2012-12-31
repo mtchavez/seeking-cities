@@ -5,6 +5,7 @@ build
 resources/*.nib
 resources/*.momd
 resources/*.storyboardc
+resources/.DS_Store
 .env
 *.mobileprovision
 ib.xcodeproj

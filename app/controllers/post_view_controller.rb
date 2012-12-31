@@ -80,7 +80,7 @@ class PostViewController < UIViewController
 
   def webView(webView, shouldStartLoadWithRequest: request, navigationType: navigationType)
     if navigationType == UIWebViewNavigationTypeLinkClicked
-        UIApplication.sharedApplication.openURL(request.URL)
+        App.openURL(request.URL)
       return false
     end
 

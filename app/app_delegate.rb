@@ -1,17 +1,21 @@
 class AppDelegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    # Add a 1 second delay
-    # NSThread.sleepForTimeInterval 1.0
     application.setStatusBarStyle :black.uistatusbarstyle, animated: 'YES'
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    # tabbar = UITabBarController.alloc.init
-    # home_controller = HomeViewController.alloc.init
-    #tabbar.title = NSBundle.mainBundle.infoDictionary["CFBundleName"]
-    # @window.rootViewController = UINavigationController.alloc.initWithRootViewController(home_controller)
-    storyboard = UIStoryboard.storyboardWithName 'Storyboard', bundle: nil
+    storyboard = if is_iphone5?
+      UIStoryboard.storyboardWithName 'Storyboard5', bundle: nil
+    else
+      UIStoryboard.storyboardWithName 'Storyboard', bundle: nil
+    end
     @window.rootViewController = UINavigationController.alloc.initWithRootViewController storyboard.instantiateInitialViewController
     @window.makeKeyAndVisible
+    true
+  end
+
+  def is_iphone5?
+    return unless Device.iphone?
+    return false if Device.screen.height <= 480.0
     true
   end
 
