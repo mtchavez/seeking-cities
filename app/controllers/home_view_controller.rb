@@ -43,7 +43,6 @@ class HomeViewController < UIViewController
   end
 
   def nav_btn_touched sender
-    storyboard = UIStoryboard.storyboardWithName 'Storyboard', bundle: nil
     segue = case sender.tag
     when 1
       'LocationsSegue'
