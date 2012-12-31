@@ -213,10 +213,70 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="zRI-Wv-ig4"/>
+                    <connections>
+                        <segue destination="Hp6-tN-XDE" kind="push" identifier="PostsTableSegue" id="lbp-Di-SBH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rca-3A-tXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="567" y="-132"/>
+        </scene>
+        <!--Posts Table View Controller-->
+        <scene sceneID="4rr-rk-etd">
+            <objects>
+                <tableViewController storyboardIdentifier="PostsTable" id="Hp6-tN-XDE" customClass="PostsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mrb-gX-Cee">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="PostCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="70" id="JrM-Dn-1EB" customClass="PostViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-8i-u7X">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="211" id="BrI-W0-JyN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ope-G7-Ba1">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="CDG-El-gyW"/>
+                                                <constraint firstAttribute="height" constant="50" id="Y0n-Gt-TBM"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="gQ8-8i-u7X" firstAttribute="top" secondItem="ope-G7-Ba1" secondAttribute="top" type="default" id="1ag-9h-xlv"/>
+                                    <constraint firstItem="ope-G7-Ba1" firstAttribute="leading" secondItem="JrM-Dn-1EB" secondAttribute="leading" constant="10" id="G1X-cG-AJM"/>
+                                    <constraint firstItem="ope-G7-Ba1" firstAttribute="bottom" secondItem="gQ8-8i-u7X" secondAttribute="bottom" type="default" id="HPr-FH-TWO"/>
+                                    <constraint firstItem="ope-G7-Ba1" firstAttribute="centerY" secondItem="JrM-Dn-1EB" secondAttribute="centerY" type="default" id="QGC-c4-Cfa"/>
+                                    <constraint firstItem="gQ8-8i-u7X" firstAttribute="leading" secondItem="JrM-Dn-1EB" secondAttribute="leading" constant="81" id="jfx-aP-Nnv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="previewImage" destination="ope-G7-Ba1" id="t7y-b5-J7n"/>
+                                    <outlet property="titleLabel" destination="gQ8-8i-u7X" id="t7n-48-Sco"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hp6-tN-XDE" id="XAi-EU-RZk"/>
+                            <outlet property="delegate" destination="Hp6-tN-XDE" id="WI2-gM-cvl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0d5-Y1-h2A"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lZK-RF-YOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="985" y="217"/>
         </scene>
         <!--Activities Table View Controller - Activities-->
         <scene sceneID="dDQ-Y0-X9N">
@@ -273,6 +333,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="rZb-M0-yYY"/>
+                    <connections>
+                        <segue destination="Hp6-tN-XDE" kind="push" identifier="PostsTableSegue" id="ygb-Vr-MUD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1T-rl-GET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,7 +388,6 @@
             <relationships>
                 <relationship kind="action" name="load_locations"/>
                 <relationship kind="action" name="numberOfSectionsInTableView:"/>
-                <relationship kind="action" name="prepareForSegue:"/>
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
                 <relationship kind="action" name="title"/>
                 <relationship kind="action" name="viewDidLoad"/>
@@ -335,10 +397,32 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="PostViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="previewImage"/>
+                <relationship kind="outlet" name="titleLabel"/>
+            </relationships>
+        </class>
+        <class className="PostsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="load_posts_from_location"/>
+                <relationship kind="action" name="load_posts_from_tag"/>
+                <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="set_title"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="action" name="viewDidUnload"/>
+            </relationships>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="lbp-Di-SBH"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -124,12 +124,17 @@ class LocationsTableViewController < UITableViewController
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     location = @locations[indexPath.row]
-    posts_controller = PostsTableViewController.alloc.init_with_location(location)
-    navigationController.pushViewController(posts_controller, animated:true)
+    # posts_controller = PostsTableViewController.alloc.init_with_location(location)
+    # navigationController.pushViewController(posts_controller, animated:true)
+    
+    # storyboard = UIStoryboard.storyboardWithName 'Storyboard' bundle: nil 
+    # posts_controller = storyboard.instantiateViewControllerWithIdentifier 'PostsTable'
+    # [self.navigationController pushViewController:lvc animated:YES];
+    self.performSegueWithIdentifier 'PostsTableSegue', sender: location
   end
 
-  def prepareForSegue sender
-    p 'SEGUE!!'
+  def prepareForSegue segue, sender:sender
+    segue.destinationViewController.location = sender
   end
 
 end

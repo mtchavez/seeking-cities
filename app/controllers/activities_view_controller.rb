@@ -128,4 +128,5 @@ class ActivitiesTableViewController < UITableViewController
     posts_controller = PostsTableViewController.alloc.init_with_tag(tag)
     navigationController.pushViewController(posts_controller, animated:true)
   end
+
 end

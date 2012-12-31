@@ -79,15 +79,23 @@ class PostsTableViewController < UITableViewController
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
-    cellIdentifier = self.class.name
+    cellIdentifier = 'PostCell'
     cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) || begin
-      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:cellIdentifier)
+      cell = PostViewCell.alloc.initWithStyle UITableViewCellStyleDefault, reuseIdentifier:cellIdentifier
       cell
     end
 
     post = @posts[indexPath.row]
-    cell.textLabel.text = post.title
-    cell.imageView.image = UIImage.imageWithData(NSData.dataWithContentsOfURL(post.thumbnail.to_s.nsurl))
+
+    cell.titleLabel.text = post.title
+    cell.titleLabel.font = UIFont.fontWithName 'StMarie-Thin', size: 18.0
+    cell.titleLabel.color = [26, 22, 49].uicolor(1.0)
+
+    cell.previewImage.image = UIImage.imageWithData(NSData.dataWithContentsOfURL(post.thumbnail.to_s.nsurl))
+
+    selectionView = UIView.alloc.init
+    selectionView.backgroundColor = [193, 255, 254].uicolor(1.0)
+    cell.selectedBackgroundView = selectionView
     cell
   end
 
@@ -133,4 +141,5 @@ class PostsTableViewController < UITableViewController
     post_controller = PostViewController.alloc.init_with_post(post)
     navigationController.pushViewController(post_controller, animated: true)
   end
+
 end
