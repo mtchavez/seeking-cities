@@ -3,7 +3,7 @@ class PostViewController < UIViewController
   extend IB
   include SugarCube::CoreGraphics
 
-  attr_accessor :post
+  attr_accessor :post, :photos
 
   outlet :titleLabel
   outlet :webView
@@ -94,6 +94,29 @@ class PostViewController < UIViewController
 
   def shouldAutorotateToInterfaceOrientation(interfaceOrientation)
     interfaceOrientation == UIInterfaceOrientationPortrait
+  end
+
+  def showImages sender
+    @photos = @post.attachments.map do |attach|
+      url           = NSURL.URLWithString attach['images']['full']['url']
+      photo         = MWPhoto.photoWithURL url
+      photo.caption = attach['caption'] unless attach['caption'].empty?
+      photo
+    end
+
+    photoBrowser = MWPhotoBrowser.alloc.initWithDelegate self
+    photoBrowser.displayActionButton = true
+    photoBrowser.wantsFullScreenLayout = false
+
+    self.navigationController.pushViewController photoBrowser, animated: true
+  end
+
+  def numberOfPhotosInPhotoBrowser photoBrowser
+    @photos.size
+  end
+
+  def photoBrowser photoBrowser, photoAtIndex: index
+    @photos[index] if index < @photos.size
   end
 
 end

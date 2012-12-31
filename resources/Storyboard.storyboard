@@ -290,10 +290,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifm-PQ-4FU">
+                            <webView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ifm-PQ-4FU">
                                 <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="324" id="eVL-3Q-jaT"/>
+                                    <constraint firstAttribute="height" constant="290" id="HGc-ls-63N"/>
+                                    <constraint firstAttribute="width" constant="290" id="vEy-E1-9A0"/>
                                 </constraints>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES" calendarEvent="YES"/>
                                 <connections>
@@ -308,15 +309,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bN-rY-DAL">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvp-Ld-A6N">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="camera.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showImages:" destination="Am6-IO-Ffi" eventType="touchUpInside" id="Gvi-RL-M7e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13292534106683007" green="0.16257259598015092" blue="0.23766342474489799" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pvp-Ld-A6N" firstAttribute="centerY" secondItem="4bN-rY-DAL" secondAttribute="centerY" type="default" id="Wa7-0s-cIk"/>
+                                    <constraint firstItem="pvp-Ld-A6N" firstAttribute="leading" secondItem="4bN-rY-DAL" secondAttribute="leading" constant="10" id="gTk-xI-Qt3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.98823535439999999" green="0.95686280729999995" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1rM-9q-10p" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0bt-Zi-eZh"/>
-                            <constraint firstItem="ifm-PQ-4FU" firstAttribute="top" secondItem="sO9-7G-Lhj" secondAttribute="top" constant="82" id="11K-oX-dpK"/>
-                            <constraint firstItem="ifm-PQ-4FU" firstAttribute="leading" secondItem="sO9-7G-Lhj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2sE-IA-hlB"/>
-                            <constraint firstAttribute="trailing" secondItem="ifm-PQ-4FU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3VW-0q-dah"/>
+                            <constraint firstItem="4bN-rY-DAL" firstAttribute="leading" secondItem="sO9-7G-Lhj" secondAttribute="leading" type="default" id="215-js-uec"/>
+                            <constraint firstItem="4bN-rY-DAL" firstAttribute="trailing" secondItem="sO9-7G-Lhj" secondAttribute="trailing" type="default" id="H9X-Xy-tFN"/>
+                            <constraint firstItem="4bN-rY-DAL" firstAttribute="top" secondItem="sO9-7G-Lhj" secondAttribute="top" constant="376" id="LBW-2a-Bb8"/>
+                            <constraint firstItem="4bN-rY-DAL" firstAttribute="bottom" secondItem="sO9-7G-Lhj" secondAttribute="bottom" type="default" id="OB9-sP-LVc"/>
                             <constraint firstItem="1rM-9q-10p" firstAttribute="leading" secondItem="sO9-7G-Lhj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aZ9-lj-NoP"/>
+                            <constraint firstItem="ifm-PQ-4FU" firstAttribute="centerX" secondItem="4bN-rY-DAL" secondAttribute="centerX" type="default" id="cF0-2y-wQd"/>
                             <constraint firstItem="1rM-9q-10p" firstAttribute="top" secondItem="sO9-7G-Lhj" secondAttribute="top" constant="7" id="fEE-tK-IfJ"/>
+                            <constraint firstItem="ifm-PQ-4FU" firstAttribute="top" secondItem="sO9-7G-Lhj" secondAttribute="top" constant="82" id="tL0-vi-1v2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CVC-1N-40U"/>
@@ -395,6 +422,7 @@
     </scenes>
     <resources>
         <image name="activity@2x.png" width="300" height="300"/>
+        <image name="camera.png" width="30" height="30"/>
         <image name="itinerary@2x.png" width="300" height="300"/>
         <image name="location@2x.png" width="300" height="300"/>
         <image name="map.png" width="677" height="436"/>
@@ -458,8 +486,8 @@
         <class className="PostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostViewController.h"/>
             <relationships>
-                <relationship kind="action" name="loadView"/>
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="showImages:"/>
                 <relationship kind="action" name="title"/>
                 <relationship kind="action" name="update_view"/>
                 <relationship kind="action" name="viewDidLoad"/>
@@ -487,6 +515,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ygb-Vr-MUD"/>
+        <segue reference="bv7-tx-nWx"/>
     </inferredMetricsTieBreakers>
 </document>
