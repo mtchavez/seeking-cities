@@ -125,8 +125,11 @@ class ActivitiesTableViewController < UITableViewController
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     tag = @activities[indexPath.row]
-    posts_controller = PostsTableViewController.alloc.init_with_tag(tag)
-    navigationController.pushViewController(posts_controller, animated:true)
+    self.performSegueWithIdentifier 'PostsTableSegue', sender: tag
+  end
+
+  def prepareForSegue segue, sender:sender
+    segue.destinationViewController.tag = sender
   end
 
 end
