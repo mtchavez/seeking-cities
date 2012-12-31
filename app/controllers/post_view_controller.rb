@@ -65,6 +65,11 @@ class PostViewController < UIViewController
           var parent = linkImages[i].parentElement;
           parent.removeChild(linkImages[i]);
         }
+        var images = document.querySelectorAll("img[src*='http://seekingcities.com/wp-content/uploads']");
+        for(i=0; i< images.length; i++){
+          var parent = images[i].parentElement;
+          parent.removeChild(images[i]);
+        }
       </script>
     }
     content = "#{style}#{@post.content}#{script}"
